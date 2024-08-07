@@ -12,12 +12,25 @@ A motor can be driven forwards or backwards depending on which way around curren
 
 You'll need to wire up two motors and your battery pack using the motor controller.
 
-+ With your Pi switched off, mount your motor controller board on the GPIO pins:
+--- task ---
+
+With your Pi switched off, mount your motor controller board on the GPIO pins:
 
     ![Motor controller board](images/mcb.png)
 
-+ Connect a battery pack to the power ports of the motor controller, connecting the positive (red) battery wire to the positive (+) power terminal on the motor controller, and the negative (black) battery wire to the negative (-) power terminal on the motor controller, and connect two motors:
+--- /task ---
+
+--- task ---
+
+Connect a battery pack to the power ports of the motor controller, connecting the positive (red) battery wire to the positive (+) power terminal on the motor controller, and the negative (black) battery wire to the negative (-) power terminal on the motor controller, and connect two motors:
 
     ![Connect battery pack](images/mcb-wiring.png)
 
-+ You'll need to know which GPIO pins your motor controller uses. Refer to the board's documentation. This will usually be described as Motor A and Motor B, or MA1, MA2, MB1, and MB2. Make a note of these pin numbers. If you're not sure which is which, you can investigate this next.
+--- /task ---
+
+--- task ---
+
+You'll need to know which GPIO pins your motor controller uses. Refer to the board's documentation. This will usually be described as Motor A and Motor B, or MA1, MA2, MB1, and MB2. Make a note of these pin numbers. If you're not sure which is which, you can investigate this next.
+
+--- /task ---
+
