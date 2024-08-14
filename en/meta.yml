@@ -8,6 +8,12 @@ last_tested: "2022-05-19"
 steps:
   - title: Motors
   - title: Connecting a Motor
+    completion:
+    - engaged
   - title: Coding a Motor
+    completion:
+    - internal
   - title: Using the Robot class
   - title: What can I do next?
+    completion:
+    - external
