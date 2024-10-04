@@ -142,7 +142,7 @@ line_number_start: 1
 line_highlights: 2, 10-13
 ---
 from gpiozero import Motor
-from time import sleep
+from time import sleep  #Sleep allows us to set running times for commands
 
 motor1 = Motor(4, 14)
 motor2 = Motor(17, 27)
@@ -150,8 +150,8 @@ motor2 = Motor(17, 27)
 motor1.forward()
 motor2.backward()
 
-while True:
-    sleep(5)
+while True:   #Repeat this section forever
+    sleep(5)  #Continue for 5 seconds
     motor1.reverse()
     motor2.reverse()
 
