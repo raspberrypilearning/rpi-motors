@@ -16,9 +16,16 @@ You can use the built-in `Motor` class to control motors.
 
 Import the `Motor` class:
 
-    ```python
-    from gpiozero import Motor
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 
+---
+from gpiozero import Motor
+--- /code ---
 
 --- /task ---
 
@@ -26,10 +33,21 @@ Import the `Motor` class:
 
 Now create a `Motor` instance using the pin numbers for each motor:
 
-    ```python
-    motor1 = Motor(4, 14)
-    motor2 = Motor(17, 27)
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 3-4
+---
+from gpiozero import Motor
+
+motor1 = Motor(4, 14)
+motor2 = Motor(17, 27)
+
+--- /code ---
+
 
 Note: to make it easier to see which pin is which, you can use `Motor(forward=4, backward=14)` for future reference.
 
@@ -39,9 +57,23 @@ Note: to make it easier to see which pin is which, you can use `Motor(forward=4,
 
 Now drive one of the motors forward using the following code:
 
-    ```python
-    motor1.forward()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 6
+---
+from gpiozero import Motor
+
+motor1 = Motor(4, 14)
+motor2 = Motor(17, 27)
+
+motor1.forward()
+
+--- /code ---
+
 
 --- /task ---
 
@@ -49,9 +81,24 @@ Now drive one of the motors forward using the following code:
 
 And the other backwards:
 
-    ```python
-    motor2.backward()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 7
+---
+from gpiozero import Motor
+
+motor1 = Motor(4, 14)
+motor2 = Motor(17, 27)
+
+motor1.forward()
+motor2.backward()
+
+--- /code ---
+
 
 --- /task ---
 
@@ -59,10 +106,24 @@ And the other backwards:
 
 Or try half speed:
 
-    ```python
-    motor1.forward(0.5)
-    motor2.backward(0.5)
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 7
+---
+from gpiozero import Motor
+
+motor1 = Motor(4, 14)
+motor2 = Motor(17, 27)
+
+motor1.forward(0.5)
+motor2.backward(0.5)
+
+--- /code ---
+
 
 --- /task ---
 
@@ -72,26 +133,30 @@ The `Motor` class also allows you to reverse the motor's direction.
 
 Try using this loop:
 
-    ```python
-    motor1.forward()
-    motor2.backward()
-    while True:
-        sleep(5)
-        motor1.reverse()
-        motor2.reverse()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 9-12
+---
+from gpiozero import Motor
 
-This will make the motors spin in opposite directions, then switch every five seconds. Press **Ctrl C** to exit the loop.
+motor1 = Motor(4, 14)
+motor2 = Motor(17, 27)
 
---- /task ---
+motor1.forward()
+motor2.backward()
 
---- task ---
+while True:
+    sleep(5)
+    motor1.reverse()
+    motor2.reverse()
 
-Now stop the motors:
+--- /code ---
 
-    ```python
-    motor1.stop()
-    motor2.stop()
-    ```
-    
+
+This will make the motors spin in opposite directions, then switch every five seconds. Press **Stop** to exit the loop.
+
 --- /task ---

@@ -6,9 +6,18 @@ If you had a robot with two wheels you would want to control the two motors toge
 
 Import the `Robot` class:
 
-    ```python
-    from gpiozero import Robot
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights:
+---
+from gpiozero import Robot
+
+--- /code ---
+
 
 --- /task ---
 
@@ -16,67 +25,135 @@ Import the `Robot` class:
 
 Now create a `Robot` instance using the pin numbers for each motor:
 
-    ```python
-    robot = Robot((4, 14), (17, 27))
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 3
+---
+from gpiozero import Robot
 
-    Note: to make it easier to see which pin is which, you can use `Robot(left=(4, 14), right=(17, 27))` for future reference.
+robot = Robot((4, 14), (17, 27))
 
---- /task ---
+--- /code ---
 
---- task ---
 
-Now drive one of the motors forward using the following code:
-
-    ```python
-    robot.forward()
-    ```
-
-    Both motors should now be driving forwards.
-
---- /task ---
-
---- task ---
-
-And backwards:
-
-    ```python
-    robot.backward()
-    ```
-
-Both motors should now be driving backwards.
+Note: to make it easier to see which pin is which, you can use `Robot(left=(4, 14), right=(17, 27))` for future reference.
 
 --- /task ---
 
 --- task ---
 
-Try reverse a few times:
+Now drive the motors forward using the following code:
 
-    ```python
-    robot.reverse()
-    robot.reverse()
-    robot.reverse()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 5
+---
+from gpiozero import Robot
+
+robot = Robot((4, 14), (17, 27))
+
+robot.forward()
+
+--- /code ---
+
+
+Both motors should now be driving forwards.
 
 --- /task ---
 
 --- task ---
 
-Or try half speed:
+Or make them drive backwards with:
 
-    ```python
-    robot.forward(0.5)
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 5
+line_highlights:
+---
+robot.backward()
+
+--- /code ---
+
 
 --- /task ---
 
 --- task ---
 
-That's not all! What would happen if the left wheel went forwards and the right wheel went backwards? The robot would turn right. Try it:
+Try using `reverse` a few times to see what happens:
 
-    ```python
-    robot.right()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 5-7
+---
+from gpiozero import Robot
+
+robot = Robot((4, 14), (17, 27))
+
+robot.reverse()
+robot.reverse()
+robot.reverse()
+
+--- /code ---
+
+
+--- /task ---
+
+--- task ---
+
+Or try driving forward at half speed:
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights:
+---
+robot.forward(0.5)
+
+--- /code ---
+
+
+--- /task ---
+
+--- task ---
+
+That's not all! What would happen if the left wheel went forwards and the right wheel went backwards? The robot would turn right. 
+
+Try it using `robot.right()`
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 5
+---
+from gpiozero import Robot
+
+robot = Robot((4, 14), (17, 27))
+
+robot.right()
+
+--- /code ---
+
 
 --- /task ---
 
@@ -84,9 +161,29 @@ That's not all! What would happen if the left wheel went forwards and the right 
 
 Then try this:
 
-    ```python
-    robot.left()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 2, 6-12
+---
+from gpiozero import Robot
+from time import sleep
+
+robot = Robot((4, 14), (17, 27))
+
+robot.forward(0.5)
+sleep(1) # Make the forward command last for 1 second
+robot.right()
+robot.forward()
+sleep(1)
+robot.left()
+robot.forward()
+
+--- /code ---
+
 
 --- /task ---
 
@@ -94,8 +191,30 @@ Then try this:
 
 Now stop the robot:
 
-    ```python
-    robot.stop()
-    ```
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 1
+line_highlights: 13-14
+---
+from gpiozero import Robot
+from time import sleep
+
+robot = Robot((4, 14), (17, 27))
+
+robot.forward(1)
+sleep(0.5)
+robot.right()
+robot.forward()
+sleep(1)
+robot.left()
+robot.forward()
+sleep(1)
+robot.stop()
+
+--- /code ---
+
 
 --- /task ---
