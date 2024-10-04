@@ -2,7 +2,7 @@
 
 --- task ---
 
-Once you have your motor connected, open a new python file.
+Once you have your motor connected, open a new Python file.
 
 --- /task ---
 
@@ -139,9 +139,10 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 1
-line_highlights: 9-12
+line_highlights: 2, 10-13
 ---
 from gpiozero import Motor
+from time import sleep
 
 motor1 = Motor(4, 14)
 motor2 = Motor(17, 27)
