@@ -1,0 +1,19 @@
+title: Raspberry Pi - Motors
+hero_image: images/banner.png
+description: Connect motors to your Raspberry Pi.
+version: 4
+listed: false
+copyedit: false
+last_tested: "2022-05-19"
+steps:
+  - title: Motors
+  - title: Connecting a Motor
+    completion:
+    - engaged
+  - title: Coding a Motor
+    completion:
+    - internal
+  - title: Using the Robot class
+  - title: What can I do next?
+    completion:
+    - external
